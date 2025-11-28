@@ -1,0 +1,944 @@
+/* ===========================
+   GLOBAL STYLES & VARIABLES
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-purple: #4a3d5e;
+    --light-purple: #c4b5d4;
+    --medium-purple: #9b88ad;
+    --teal: #5dd4d4;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --text-dark: #2d2d2d;
+    --font-family: 'Georgia', serif;
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+/* ===========================
+   NAVIGATION
+   =========================== */
+
+.navbar {
+    background-color: var(--dark-purple);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.logo-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--light-purple);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+/* ===========================
+   HERO SECTION
+   =========================== */
+
+.hero {
+    background-color: var(--light-purple);
+    padding: 4rem 2rem;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero .tagline {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.hero-image {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Hero Dark Section (for darker backgrounds) */
+.hero-dark {
+    background-color: var(--dark-purple);
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-dark h1 {
+    font-size: 3rem;
+    font-family: var(--font-family);
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-dark p {
+    font-size: 1.1rem;
+    color: var(--white);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   MAIN CONTENT SECTIONS
+   =========================== */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Club Section */
+.about-club {
+    background-color: var(--white);
+    padding: 3rem 2rem;
+    border-left: 8px solid var(--light-purple);
+}
+
+.section-content h2 {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    color: var(--dark-purple);
+    margin-bottom: 1.5rem;
+}
+
+.section-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* Mission Highlight Section */
+.mission-highlight {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.mission-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--dark-purple);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+/* Our Mission Section */
+.our-mission {
+    background-color: var(--white);
+    padding: 3rem 2rem;
+    border-left: 8px solid var(--light-purple);
+}
+
+.our-mission h3 {
+    font-size: 1.8rem;
+    font-family: var(--font-family);
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+}
+
+.our-mission p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* Membership Section */
+.membership-section {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+}
+
+.membership-section h3 {
+    font-size: 1.5rem;
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.membership-section > p {
+    font-size: 1rem;
+    color: var(--dark-purple);
+    margin-bottom: 2rem;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.membership-card {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.membership-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.membership-card h4 {
+    font-size: 1.1rem;
+    color: var(--dark-purple);
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+/* Community Message Section */
+.community-message {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.community-message p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--dark-purple);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Final CTA Section */
+.final-cta {
+    background-color: var(--dark-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.final-cta p {
+    font-size: 1.1rem;
+    color: var(--white);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   CLUB INFO PAGE
+   =========================== */
+
+.membership-cards {
+    padding: 3rem 2rem;
+    background-color: var(--white);
+}
+
+.card-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.membership-item {
+    background-color: var(--light-purple);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.membership-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.membership-item h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+}
+
+.membership-item p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* What We Offer Section */
+.what-offer {
+    background-color: var(--medium-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.what-offer h2 {
+    font-size: 1.8rem;
+    color: var(--dark-purple);
+    margin-bottom: 1.5rem;
+}
+
+.what-offer p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Guest Instruction Section */
+.guest-instruction {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+}
+
+.instruction-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.instruction-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.instruction-text h3 {
+    font-size: 1.3rem;
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.instruction-text p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+}
+
+/* ===========================
+   PROGRAMS PAGE
+   =========================== */
+
+.programs-title {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.programs-title h1 {
+    font-size: 2.5rem;
+    font-family: var(--font-family);
+    color: var(--dark-purple);
+}
+
+.programs-intro {
+    background-color: var(--light-purple);
+    padding: 2rem;
+    text-align: center;
+}
+
+.programs-intro img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.programs-intro p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Program Card */
+.program-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 2rem;
+    background-color: var(--light-purple);
+    border-radius: 8px;
+    margin: 2rem;
+}
+
+.program-card-reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.program-card-reverse img {
+    order: -1;
+}
+
+.program-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+}
+
+.program-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-purple);
+    margin-bottom: 1rem;
+}
+
+.program-text p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.program-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.btn-learn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    color: var(--dark-purple);
+    border: 2px solid var(--dark-purple);
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-learn:hover {
+    background-color: var(--dark-purple);
+    color: var(--white);
+}
+
+/* Programs Quote Section */
+.programs-quote {
+    background-color: var(--medium-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.programs-quote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--dark-purple);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   CONTACT PAGE
+   =========================== */
+
+.contact-heading {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-heading h2 {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    color: var(--dark-purple);
+}
+
+.contact-image {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    background-color: var(--light-purple);
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 2rem;
+    background-color: var(--light-purple);
+    align-items: center;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-detail {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--dark-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.contact-text h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-purple);
+    margin-bottom: 0.5rem;
+}
+
+.contact-text p {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.contact-text a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+    color: var(--dark-purple);
+}
+
+.contact-right img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.reach-out {
+    background-color: var(--light-purple);
+    padding: 2rem;
+    text-align: center;
+}
+
+.reach-out h2 {
+    font-size: 1.8rem;
+    color: var(--dark-purple);
+}
+
+/* ===========================
+   ABOUT US PAGE
+   =========================== */
+
+.about-title {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+    text-align: left;
+}
+
+.about-title h1 {
+    font-size: 3rem;
+    font-family: var(--font-family);
+    color: var(--dark-purple);
+    font-weight: 700;
+}
+
+.about-image {
+    background-color: var(--light-purple);
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.about-text {
+    background-color: var(--dark-purple);
+    padding: 3rem 2rem;
+    text-align: left;
+}
+
+.about-text p {
+    font-size: 1rem;
+    color: var(--white);
+    line-height: 1.8;
+}
+
+.mission-quote {
+    background-color: var(--light-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.mission-quote p {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--dark-purple);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-weight: 600;
+}
+
+.sponsors {
+    background-color: var(--white);
+    padding: 3rem 2rem;
+}
+
+.sponsors-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sponsors-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.sponsors-text h2 {
+    font-size: 1.8rem;
+    font-family: var(--font-family);
+    color: var(--dark-purple);
+    margin-bottom: 1.5rem;
+}
+
+.sponsors-text p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.final-message {
+    background-color: var(--medium-purple);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.final-message p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--dark-purple);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+.footer {
+    background-color: var(--dark-purple);
+    padding: 3rem 2rem 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    align-items: start;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.footer-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+.footer-email {
+    text-align: right;
+}
+
+.footer-email a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-email a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: var(--white);
+    font-size: 0.85rem;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+
+    .hero-dark h1 {
+        font-size: 2rem;
+    }
+
+    .section-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .mission-text {
+        font-size: 1.1rem;
+    }
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-row {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        grid-template-columns: 1fr;
+        margin: 1rem;
+    }
+
+    .program-content {
+        grid-template-columns: 1fr;
+    }
+
+    .instruction-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sponsors-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-email {
+        text-align: center;
+    }
+
+    .about-title h1 {
+        font-size: 2rem;
+    }
+
+    .programs-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .contact-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero .tagline {
+        font-size: 1rem;
+    }
+
+    .hero-dark h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-dark p {
+        font-size: 0.95rem;
+    }
+
+    .section-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .mission-text {
+        font-size: 1rem;
+    }
+
+    .membership-card h4 {
+        font-size: 1rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .logo-circle {
+        width: 30px;
+        height: 30px;
+    }
+
+    .program-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .program-text p {
+        font-size: 0.95rem;
+    }
+
+    .contact-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-icon {
+        margin: 0 auto;
+    }
+}
